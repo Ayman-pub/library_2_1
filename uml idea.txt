@@ -1,0 +1,43 @@
+                           <<abstract>>
+                               Person
+                        -----------------------
+                        - name : String
+                        - email : String
+                        -----------------------
+                        + Person()
+                        + Person(name:String, email:String)
+                        + displayDetails() : void   <<abstract>>
+                        -----------------------
+                                   ^
+                         ___________|_____________
+                        |                           |
+                    Student                     Faculty
+            -----------------------        -----------------------
+            - borrowedBooks : List<Book>   - borrowedBooks : List<Book>
+            -----------------------        -----------------------
+            + Student()                   + Faculty()
+            + Student(name, email)        + Faculty(name, email)
+            + displayDetails() : void     + displayDetails() : void
+            + borrowBook(b:Book) : void   + borrowBook(b:Book) : void
+            -----------------------        -----------------------
+
+                    Book
+        -----------------------------
+        - title : String
+        - author : String
+        - isbn : String
+        - price : double
+        -----------------------------
+        + Book()
+        + Book(title, author, isbn, price)
+        + displayInfo() : void
+        -----------------------------
+        + totalBooksIssued : static int
+        -----------------------------
+
+
+                   Library
+        --------------------------------
+        + Library()
+        + printPersonDetails(p:Person) : void
+        --------------------------------
